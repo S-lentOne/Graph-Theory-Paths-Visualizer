@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 
+export default function handler(req: VercelRequest, res: VercelResponse) {
+  res.status(200).send('Graph Theory Visualizer running!');
+}
 const CompleteRouteGraph = () => {
   const svgRef = useRef();
   const [selectedEdges, setSelectedEdges] = useState([]);
